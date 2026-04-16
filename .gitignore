@@ -1,0 +1,9 @@
+# JARs e binários grandes
+*.jar
+
+# Metabase
+metabase.jar
+
+# Plugins
+plugins/
+``
