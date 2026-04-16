@@ -1,0 +1,51 @@
+
+CREATE TABLE dim_tempo (
+    id_tempo SERIAL PRIMARY KEY,
+    ano INTEGER NOT NULL
+);
+
+
+CREATE TABLE dim_uf (
+    id_uf SERIAL PRIMARY KEY,
+    sigla_uf CHAR(2) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE dim_serie (
+    id_serie SERIAL PRIMARY KEY,
+    serie INTEGER NOT NULL UNIQUE
+);
+
+
+CREATE TABLE fato_avaliacao (
+    id_fato SERIAL PRIMARY KEY,
+
+    id_tempo INTEGER NOT NULL,
+    id_uf INTEGER NOT NULL,
+    id_serie INTEGER NOT NULL,
+
+    taxa_alfabetizacao NUMERIC(5,2),
+    media_portugues NUMERIC(7,2),
+
+    prop_nivel_0 NUMERIC(5,2),
+    prop_nivel_1 NUMERIC(5,2),
+    prop_nivel_2 NUMERIC(5,2),
+    prop_nivel_3 NUMERIC(5,2),
+    prop_nivel_4 NUMERIC(5,2),
+    prop_nivel_5 NUMERIC(5,2),
+    prop_nivel_6 NUMERIC(5,2),
+    prop_nivel_7 NUMERIC(5,2),
+    prop_nivel_8 NUMERIC(5,2),
+
+    CONSTRAINT fk_tempo
+        FOREIGN KEY (id_tempo)
+        REFERENCES dim_tempo (id_tempo),
+
+    CONSTRAINT fk_uf
+        FOREIGN KEY (id_uf)
+        REFERENCES dim_uf (id_uf),
+
+    CONSTRAINT fk_serie
+        FOREIGN KEY (id_serie)
+        REFERENCES dim_serie (id_serie)
+);
