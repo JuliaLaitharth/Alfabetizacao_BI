@@ -69,7 +69,7 @@ O Data Warehouse foi modelado utilizando o **Star Schema**, composto por uma tab
 *   **dim\_serie**
 *   **dim\_rede**
 
-![alt text](alfabe.png)
+![alt text](Images/alfabe.png)
 
 ***
 
