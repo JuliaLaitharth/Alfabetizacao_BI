@@ -117,7 +117,7 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras
 *   **Objetivo:** Comparar o desempenho educacional entre os estados
 
-![alt text](Ranking.png)
+![alt text](images/Ranking.png)
 
 ***
 
@@ -126,11 +126,11 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras
 *   **Objetivo:** Comparar os resultados entre 2023 e 2024
 
-![alt text](compara.png)
+![alt text](images/compara.png)
 
 **Com filtro: 2023**
 
-![alt text](2023.png)
+![alt text](images/2023.png)
 
 ***
 
@@ -139,7 +139,7 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Área
 *   **Objetivo:** Visualizar a tendência temporal do indicador
  
-![alt text](ano.png)
+![alt text](images/ano.png)
 
 ***
 
@@ -148,9 +148,9 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras Empilhadas
 *   **Objetivo:** Avaliar a qualidade do aprendizado por UF
 
-![alt text](PROF.png)
+![alt text](images/PROF.png)
 
-![alt text](detalhes.png)
+![alt text](images/detalhes.png)
 
 ***
 
@@ -159,11 +159,11 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Tabela
 *   **Objetivo:** Exibir valores exatos para análise detalhada
 
-![alt text](123.png)
+![alt text](images/123.png)
 
 **Com filtros: 2023, AM, AL, AP**
 
-![alt text](FILTRO.png)
+![alt text](images/FILTRO.png)
 ***
 
 ## 8. Filtros do Dashboard
@@ -173,12 +173,12 @@ O dashboard possui filtros globais que permitem análise interativa:
 *   **Filtro de Ano**
     *   Permite selecionar 2023 ou 2024
 
-    ![alt text](ANOfil.png)
+    ![alt text](images/ANOfil.png)
 
 *   **Filtro de UF**
     *   Permite selecionar uma ou mais Unidades da Federação
 
-    ![alt text](UF.png)
+    ![alt text](images/UF.png)
 
 ***
 
@@ -200,16 +200,29 @@ O projeto evidenciou a aplicação prática de conceitos de **Data Warehouse e B
 
 ## 11. Estrutura do Projeto
 
-    📁 projeto_dw_inep/
-     ├── etl/
-     │    └── etl_inep.py
-     ├── database/
-     │    └── ddl_dw.sql
-     ├── data/
-     │    └── br_inep_avaliacao_alfabetizacao_uf.csv
-     ├── dashboards/
-     │    └── prints_metabase/
-     └── README.md
+    Alfabetizacao_BI/
+        ├── Images/
+        │   ├── 123.png
+        │   ├── 2023.png
+        │   ├── ANOfil.png
+        │   ├── FILTRO.png
+        │   ├── PROF.png
+        │   ├── Ranking.png
+        │   ├── UF.png
+        │   ├── alfabe.png
+        │   ├── ano.png
+        │   ├── compara.png
+        │   └── detalhes.png
+        ├── SQL/
+        │   └── criacao_banco.sql.txt
+        ├── data/
+        │   └── br_inep_avaliacao_alfabetizacao_uf.csv
+        ├── .DS_Store
+        ├── .gitignore
+        ├── README.md
+        ├── etl_projeto.py
+        ├── metabase.db.mv.db
+        └── metabase.db.trace.db
 
 ## 12. Como Executar o Projeto 
 
