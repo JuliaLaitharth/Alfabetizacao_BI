@@ -1,9 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-# ============================
-# CONEXÃO
-# ============================
 engine = create_engine(
     'postgresql://postgres:20042004@localhost:5433/Alfabetizacao'
 )
@@ -16,9 +13,6 @@ def processar_etl():
 
     df = pd.read_csv(CSV_PATH)
 
-    # ============================
-    # TRANSFORM
-    # ============================
     df['ano'] = df['ano'].astype(int)
     df['sigla_uf'] = df['sigla_uf'].astype(str)
     df['serie'] = df['serie'].astype(int)
@@ -31,9 +25,6 @@ def processar_etl():
 
         for _, row in df.iterrows():
 
-            # ----------------------------
-            # DIM TEMPO
-            # ----------------------------
             conn.execute(text("""
                 INSERT INTO dim_tempo (id_tempo, ano)
                 SELECT :ano, :ano
@@ -42,9 +33,6 @@ def processar_etl():
                 )
             """), {"ano": row['ano']})
 
-            # ----------------------------
-            # DIM UF
-            # ----------------------------
             conn.execute(text("""
                 INSERT INTO dim_uf (sigla_uf)
                 SELECT :uf
@@ -53,9 +41,6 @@ def processar_etl():
                 )
             """), {"uf": row['sigla_uf']})
 
-            # ----------------------------
-            # DIM REDE
-            # ----------------------------
             conn.execute(text("""
                 INSERT INTO dim_rede (codigo_rede)
                 SELECT :rede
@@ -64,9 +49,7 @@ def processar_etl():
                 )
             """), {"rede": row['rede']})
 
-            # ----------------------------
-            # DIM SÉRIE
-            # ----------------------------
+
             conn.execute(text("""
                 INSERT INTO dim_serie (serie)
                 SELECT :serie
@@ -75,9 +58,6 @@ def processar_etl():
                 )
             """), {"serie": row['serie']})
 
-            # ----------------------------
-            # BUSCAR IDS
-            # ----------------------------
             id_uf = conn.execute(text("""
                 SELECT id_uf FROM dim_uf WHERE sigla_uf = :uf
             """), {"uf": row['sigla_uf']}).fetchone()[0]
@@ -90,9 +70,6 @@ def processar_etl():
                 SELECT id_serie FROM dim_serie WHERE serie = :serie
             """), {"serie": row['serie']}).fetchone()[0]
 
-            # ----------------------------
-            # FATO
-            # ----------------------------
             conn.execute(text("""
                 INSERT INTO fato_avaliacao (
                     id_tempo, id_uf, id_rede, id_serie,
@@ -130,7 +107,7 @@ def processar_etl():
 
         conn.commit()
 
-    print("✅ ETL INEP FINALIZADO COM SUCESSO!")
+    print("ETL INEP FINALIZADO COM SUCESSO!")
 
 
 if __name__ == "__main__":
