@@ -134,53 +134,55 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 
 ***
 
-### 📈 7.3 Evolução da Taxa de Alfabetização ao Longo do Tempo
+### 7.3 Evolução da Taxa de Alfabetização ao Longo do Tempo
 
 *   **Tipo:** Gráfico de Área
 *   **Objetivo:** Visualizar a tendência temporal do indicador
-
-📷 **Imagem do gráfico:**
-
-> *Inserir imagem aqui*
+ 
+![alt text](ano.png)
 
 ***
 
-### 📊 7.4 Distribuição dos Alunos por Nível de Proficiência
+### 7.4 Distribuição dos Alunos por Nível de Proficiência
 
 *   **Tipo:** Gráfico de Barras Empilhadas
 *   **Objetivo:** Avaliar a qualidade do aprendizado por UF
 
-📷 **Imagem do gráfico:**
+![alt text](PROF.png)
 
-> *Inserir imagem aqui*
+![alt text](detalhes.png)
 
 ***
 
-### 📋 7.5 Tabela de Indicadores de Alfabetização por UF
+### 7.5 Tabela de Indicadores de Alfabetização por UF
 
 *   **Tipo:** Tabela
 *   **Objetivo:** Exibir valores exatos para análise detalhada
 
-📷 **Imagem da tabela:**
+![alt text](123.png)
 
-> *Inserir imagem aqui*
+**Com filtros: 2023, AM, AL, AP**
 
+![alt text](FILTRO.png)
 ***
 
-## 🎛️ 8. Filtros do Dashboard
+## 8. Filtros do Dashboard
 
 O dashboard possui filtros globais que permitem análise interativa:
 
 *   **Filtro de Ano**
     *   Permite selecionar 2023 ou 2024
+
+    ![alt text](ANOfil.png)
+
 *   **Filtro de UF**
     *   Permite selecionar uma ou mais Unidades da Federação
 
-> **Importante:** não foi utilizado filtro global de taxa de alfabetização, pois trata-se de uma métrica agregada. As análises por faixa de taxa foram realizadas diretamente nas perguntas, garantindo consistência analítica.
+    ![alt text](UF.png)
 
 ***
 
-## 📈 9. Análises Possíveis
+## 9. Análises Possíveis
 
 *   Comparação do desempenho educacional entre estados
 *   Avaliação da evolução da alfabetização ao longo do tempo
@@ -190,13 +192,13 @@ O dashboard possui filtros globais que permitem análise interativa:
 
 ***
 
-## ✅ 10. Conclusão
+## 10. Conclusão
 
 O projeto evidenciou a aplicação prática de conceitos de **Data Warehouse e Business Intelligence**, utilizando dados públicos e reais do INEP. A solução desenvolvida permite análises claras, interativas e fundamentadas, podendo ser expandida futuramente com novos dados, períodos ou indicadores educacionais.
 
 ***
 
-## 📂 11. Estrutura do Projeto
+## 11. Estrutura do Projeto
 
     📁 projeto_dw_inep/
      ├── etl/
@@ -209,3 +211,60 @@ O projeto evidenciou a aplicação prática de conceitos de **Data Warehouse e B
      │    └── prints_metabase/
      └── README.md
 
+## 12. Como Executar o Projeto 
+
+Esta seção descreve o passo a passo necessário para executar o projeto localmente, desde a configuração do banco de dados até a visualização dos dashboards no Metabase.
+
+***
+
+### 12.1. Pré-requisitos
+
+Antes de iniciar, certifique-se de que os seguintes componentes estejam instalados:
+
+- Python 3.9 ou superior
+- PostgreSQL 13 ou superior
+- Git
+- Metabase (arquivo `.jar` ou via Docker)
+- pip (gerenciador de pacotes do Python)
+
+***
+
+### 12.2. Clonar o Repositório
+
+```bash
+git clone https://github.com/JuliaLaitharth/Alfabetizacao_BI.git
+cd Alfabetizacao_BI
+```
+
+### 12.3. Configurar o Banco de Dados PostgreSQL
+
+Crie o banco de dados que será utilizado pelo Data Warehouse:
+
+```sql
+CREATE DATABASE alfabetizacao_BI;
+```
+Após a criação do banco, execute o script: 
+
+- psql -d alfabetizacao_bi -f sql/criacao_banco.sql
+
+***
+
+### 12.4. Instalar as Dependências do Projeto
+
+```python -m venv venv
+source venv/bin/activate   # macOS/Linux
+# venv\Scripts\activate    # Windows
+```
+pip install -r requirements.txt
+
+### 12.5. Executar o Pipeline ETL
+
+```
+python3 etl_projeto.py
+```
+***
+### 12.6. Executar o Metabase
+
+```java -jar metabase.jar````
+
+**Metabase estará disponivel em: http://localhost:3000**
