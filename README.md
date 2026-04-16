@@ -4,7 +4,7 @@
 
 **Curso:** Análise e Desenvolvimento de Sistemas  
 **Disciplina:** Business Intelligence / Data Warehouse   
-**Aluna:** *Júlia Laitharth*  
+**Aluna:** *Júlia Laitharth e Leonardo*  
 
 ***
 
