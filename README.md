@@ -117,7 +117,7 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras
 *   **Objetivo:** Comparar o desempenho educacional entre os estados
 
-![alt text](images/Ranking.png)
+![alt text](Images/Ranking.png)
 
 ***
 
@@ -126,11 +126,11 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras
 *   **Objetivo:** Comparar os resultados entre 2023 e 2024
 
-![alt text](images/compara.png)
+![alt text](Images/compara.png)
 
 **Com filtro: 2023**
 
-![alt text](images/2023.png)
+![alt text](Images/2023.png)
 
 ***
 
@@ -139,7 +139,7 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Área
 *   **Objetivo:** Visualizar a tendência temporal do indicador
  
-![alt text](images/ano.png)
+![alt text](Images/ano.png)
 
 ***
 
@@ -148,9 +148,9 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Gráfico de Barras Empilhadas
 *   **Objetivo:** Avaliar a qualidade do aprendizado por UF
 
-![alt text](images/PROF.png)
+![alt text](Images/PROF.png)
 
-![alt text](images/detalhes.png)
+![alt text](Images/detalhes.png)
 
 ***
 
@@ -159,11 +159,11 @@ Os dashboards foram desenvolvidos exclusivamente no **Metabase**, utilizando o *
 *   **Tipo:** Tabela
 *   **Objetivo:** Exibir valores exatos para análise detalhada
 
-![alt text](images/123.png)
+![alt text](Images/123.png)
 
 **Com filtros: 2023, AM, AL, AP**
 
-![alt text](images/FILTRO.png)
+![alt text](Images/FILTRO.png)
 ***
 
 ## 8. Filtros do Dashboard
@@ -173,12 +173,12 @@ O dashboard possui filtros globais que permitem análise interativa:
 *   **Filtro de Ano**
     *   Permite selecionar 2023 ou 2024
 
-    ![alt text](images/ANOfil.png)
+    ![alt text](Images/ANOfil.png)
 
 *   **Filtro de UF**
     *   Permite selecionar uma ou mais Unidades da Federação
 
-    ![alt text](images/UF.png)
+    ![alt text](Images/UF.png)
 
 ***
 
